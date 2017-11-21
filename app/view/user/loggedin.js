@@ -3,6 +3,7 @@
 
 //-- React, Component
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 
 //-- React Native
 import {
@@ -17,15 +18,25 @@ import {
 import Constant from '../../constant'
 
 //-- LoggedIn Component
-export default class LoggedIn extends Component {
+ class LoggedIn extends Component {
   // LifeCycle
   componentWillMount() {
-    AsyncStorage.getItem('user', (error, result) => {
-      if (result == null) {
-        this.props.navigation.goBack()
+    // AsyncStorage.getItem('user', (error, result) => {
+    //   if (result == null) {
+    //     this.props.navigation.goBack()
+    //   }
+    // })
+      if(!this.props.account.email){
+          this.props.navigation.goBack()
       }
-    })
+
   }
+
+ componentWillReceiveProps(nextProps){
+     if(!nextProps.account.email){
+         this.props.navigation.goBack()
+     }
+ }
 
   render() {
     return(
@@ -35,6 +46,8 @@ export default class LoggedIn extends Component {
     )
   }
 }
+
+export default connect((state)=> ({account: state.account}))(LoggedIn)
 
 //-- Styles
 let styles = StyleSheet.create({

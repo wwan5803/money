@@ -23,6 +23,7 @@ const Constant = {
         videoWidth: Dimensions.get('window').width / 2
     },
     host: 'http://articalhub.com/json/',
+    host2: 'http://admin.moneytheorymagtest.com/'
 }
 
 module.exports = Constant

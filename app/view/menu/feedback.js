@@ -65,7 +65,9 @@ export default class Feedback extends Component {
       this.setState({ isLoading:true })
 
       try {
+          console.log('??????', data)
         let response = await API.submitFeedback(data)
+          console.log('!!!!!!!!', response)
         let responseData = await response.json()
         if (responseData.success == true) {
           Alert.alert('Thank you', 'Your feedback was submitted successfully!')
@@ -107,7 +109,7 @@ export default class Feedback extends Component {
                                 </View>
                             </TouchableOpacity>
                             <Text style={{ flex:1, color:'white', fontSize:15, fontFamily:Constant.font.roman, textAlign:'center' }}>
-                              About Us
+                              Feedback
                             </Text>
                             <TouchableOpacity style={{ width:40, height:40 }} />
                         </View>
@@ -217,13 +219,21 @@ var styles = StyleSheet.create({
     content: {
       paddingHorizontal: 20,
     },
-    input: {
+    input: Platform.OS == 'ios' ? {
       width: '100%',
       marginVertical:5,
       backgroundColor:'white',
       fontSize:13,
       fontFamily:Constant.font.roman,
       paddingHorizontal:10
+    } : {
+        textAlignVertical: 'top',
+        width: '100%',
+        marginVertical:5,
+        backgroundColor:'white',
+        fontSize:13,
+        fontFamily:Constant.font.roman,
+        paddingHorizontal:10
     },
     picker: {
       width: '100%',

@@ -11,7 +11,6 @@
 		"react-native": "0.47.1",
 		"react-native-ci-tools": "^1.1.0",
 		"react-native-device-info": "^0.12.1",
-		"react-native-device-token": "^1.0.3",
 		"react-native-fetch-blob": "^0.10.8",
 		"react-native-linear-gradient": "^2.2.0",
 		"react-native-modal-picker": "0.0.16",
@@ -25,7 +24,8 @@
 		"react-navigation": "^1.0.0-beta.11",
 		"react-redux": "^5.0.6",
 		"redux": "^3.7.2",
-		"redux-logger": "^3.0.6"
+		"redux-logger": "^3.0.6",
+		"redux-thunk": "^2.2.0"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",

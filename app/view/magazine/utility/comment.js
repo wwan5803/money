@@ -43,7 +43,7 @@ export default class Comment extends Component {
                 <Text style={{ color:'white', fontFamily:Constant.font.black, fontSize:10 }}>{ this.props.name }</Text>
                 <View style={{ flex:1, flexDirection:'row', alignItems:'center', paddingVertical:10 }}>
                     { array }
-                    <Text style={{ color:'#ddbb1f', fontSize:15, marginHorizontal:10 }}>8.0</Text>
+                    <Text style={{ color:'#ddbb1f', fontSize:15, marginHorizontal:10 }}>{`${this.props.rate}.0`}</Text>
                 </View>
                 <Text style={{ color:'white', fontFamily:Constant.font.roman, fontSize:10 }}>{ this.props.comment }</Text>
                 <TouchableOpacity

@@ -44,6 +44,7 @@ export default class Newsfeed extends Component {
         try {
             let response = await API.getNewsfeeds()
             let responseData = await response.json()
+            console.log('3333333333333333', responseData)
             this.setState({
               isLoading: false,
               dataSource: dataSource.cloneWithRows(responseData.data)
@@ -62,7 +63,7 @@ export default class Newsfeed extends Component {
               onPress={ () => {this.props.navigation.navigate('NewsfeedDetail', {news:rowData})} }>
                 <View style={{ flex:1 }}>
                     <View style={{ flex:1, flexDirection:'row', padding: 15 }}>
-                        <Image style={ styles.newsImage } source={{ uri:rowData.image }} resizeMode='stretch' />
+                        <Image style={ styles.newsImage } source={{ uri:rowData.thumbnail }} resizeMode='stretch' />
                         <View style={{ flex:1, paddingHorizontal:5 }}>
                             <Text style={{ fontFamily:Constant.font.roman, fontSize:15, color:'white' }}>
                               { rowData.title }

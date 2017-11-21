@@ -21,8 +21,8 @@ import Pdf from 'react-native-pdf'
 import Constant from '../../constant'
 
 //-- Definition
-let PDF = require('./MTFebOld.pdf')
-
+// let PDF = require('./MTFebOld.pdf')
+let PDF = {uri:'http://samples.leanpub.com/thereactnativebook-sample.pdf',cache:true}
 //-- Magazine Viewer
 export default class MagazineViewer extends Component {
     constructor(props) {

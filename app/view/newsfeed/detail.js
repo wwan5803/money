@@ -39,7 +39,7 @@ export default class NewsfeedDetail extends Component {
                 <View style={ styles.newsImage }>
                     <Image
                       style={{ width:'100%', height:'100%' }}
-                      source={{ uri:news.image }}
+                      source={{ uri:news.thumbnail }}
                       resizeMode='stretch'
                     >
                         <LinearGradient
@@ -50,7 +50,7 @@ export default class NewsfeedDetail extends Component {
                     </Image>
                 </View>
                 
-                <ScrollView style={{ flex:1, padding:20 }}>
+                <ScrollView style={{ flex:1, paddingLeft: 20, paddingRight: 20, paddingBottom: 120 }}>
                     <Text style={ styles.news }>{ news.description }</Text>
                 </ScrollView>
                 <View style={ styles.titleBar }>
